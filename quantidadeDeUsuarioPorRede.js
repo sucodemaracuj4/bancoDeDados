@@ -1,4 +1,5 @@
-async function quantidadeUsuariosPorRede() {
+import { getCSS, tickConfig, } from "./common.js";
+async function quantidadeDeUsuariosPorRede() {
     const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json&#39';
     const res = await fetch (url)
     const dados = await res.json()
@@ -45,8 +46,8 @@ async function quantidadeUsuariosPorRede() {
     const grafico = document.createElement('div')
     grafico.className = 'grafico'
     document.getElementById('graficos-container').appendChild(grafico)
-    Ploty.newPlot(grafico,data, layout)
+    Ploty.newPlot(grafico, data, layout)
     
     }
     
-    quantidadeUsuariosPorRede();
+    quantidadeDeUsuariosPorRede();
